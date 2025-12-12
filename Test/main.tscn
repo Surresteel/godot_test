@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://dm370pjv5fas0"]
+
+[ext_resource type="PackedScene" uid="uid://b16m37jrx11wi" path="res://Test/tree.tscn" id="1_me6wu"]
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_me6wu"]
+
+[sub_resource type="Sky" id="Sky_me6wu"]
+sky_material = SubResource("PanoramaSkyMaterial_me6wu")
+
+[sub_resource type="Environment" id="Environment_uixho"]
+background_mode = 1
+background_color = Color(0.7058567, 0.7609132, 0.8266689, 1)
+sky = SubResource("Sky_me6wu")
+
+[node name="Node3D" type="Node3D"]
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(-0.6519661, -0.29109797, 0.70014447, 0, 0.92337114, 0.38390857, -0.75824815, 0.25029537, -0.6020067, 0.98920476, 3.7973132, -0.91929126)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_uixho")
+
+[node name="Tree" parent="." instance=ExtResource("1_me6wu")]

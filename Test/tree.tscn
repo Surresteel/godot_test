@@ -1,0 +1,32 @@
+[gd_scene load_steps=4 format=3 uid="uid://b16m37jrx11wi"]
+
+[ext_resource type="PackedScene" uid="uid://dwl1ofe0ie6yh" path="res://Test/leaf.tscn" id="1_dxget"]
+[ext_resource type="Script" uid="uid://b5e1rpdqp7qv3" path="res://scripts/tree.gd" id="1_p70ab"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_p70ab"]
+size = Vector3(0.25, 5, 0.25)
+
+[node name="Tree" type="Node3D"]
+script = ExtResource("1_p70ab")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, 0)
+mesh = SubResource("BoxMesh_p70ab")
+
+[node name="Leaf" parent="MeshInstance3D" instance=ExtResource("1_dxget")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.110289216)
+
+[node name="Leaf4" parent="MeshInstance3D" instance=ExtResource("1_dxget")]
+transform = Transform3D(0.66442204, 0, -0.7473576, 0, 1, 0, 0.7473576, 0, 0.66442204, 0.111900575, 0, 0.015579209)
+
+[node name="Leaf5" parent="MeshInstance3D" instance=ExtResource("1_dxget")]
+transform = Transform3D(-0.3502727, 0, -0.9366478, 0, 1, 0, 0.9366478, 0, -0.3502727, 0.111900575, 0.4763522, 0.015579209)
+
+[node name="Leaf6" parent="MeshInstance3D" instance=ExtResource("1_dxget")]
+transform = Transform3D(0.8999919, 0, -0.43590656, 0, 1, 0, 0.43590656, 0, 0.8999919, -0.02369856, 0.89880514, -0.091260605)
+
+[node name="Leaf2" parent="MeshInstance3D" instance=ExtResource("1_dxget")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.44758105, -0.110289216)
+
+[node name="Leaf3" parent="MeshInstance3D" instance=ExtResource("1_dxget")]
+transform = Transform3D(0.010401972, 0, -0.9999459, 0, 1, 0, 0.9999459, 0, 0.010401972, 0.13272178, 1.1620553, -0.0101258755)

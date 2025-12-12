@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://ddgnwwpknb0ni"]
+[gd_scene load_steps=7 format=3 uid="uid://ddgnwwpknb0ni"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_c6nyo"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -8,12 +8,16 @@ ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
 sky_material = SubResource("ProceduralSkyMaterial_c6nyo")
 
 [sub_resource type="Environment" id="Environment_ckhel"]
-background_mode = 2
+background_mode = 1
+background_color = Color(0.14400001, 0.1888, 0.24, 1)
 sky = SubResource("Sky_6krj3")
 tonemap_mode = 2
 glow_enabled = true
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_c6nyo"]
+
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_c6nyo"]
+material = SubResource("StandardMaterial3D_c6nyo")
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_6krj3"]
 height = 1.0

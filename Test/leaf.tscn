@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://dwl1ofe0ie6yh"]
+
+[ext_resource type="Script" uid="uid://ct8upp73ljqwr" path="res://scripts/leaf.gd" id="1_1j8q0"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dh3cf"]
+cull_mode = 2
+albedo_color = Color(0.20071414, 0.3597623, 0.18742028, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_1j8q0"]
+material = SubResource("StandardMaterial3D_dh3cf")
+size = Vector2(0.1, 0.2)
+
+[node name="Leaf" type="Node3D"]
+script = ExtResource("1_1j8q0")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.1)
+mesh = SubResource("PlaneMesh_1j8q0")
