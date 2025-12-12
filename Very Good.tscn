@@ -1,0 +1,42 @@
+[gd_scene load_steps=6 format=3 uid="uid://ddgnwwpknb0ni"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_c6nyo"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_6krj3"]
+sky_material = SubResource("ProceduralSkyMaterial_c6nyo")
+
+[sub_resource type="Environment" id="Environment_ckhel"]
+background_mode = 2
+sky = SubResource("Sky_6krj3")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_c6nyo"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_6krj3"]
+height = 1.0
+
+[node name="Node3D" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_ckhel")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+shadow_enabled = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("CapsuleMesh_c6nyo")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="MeshInstance3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6193508, -0.8133446, 0)
+mesh = SubResource("CapsuleMesh_6krj3")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="MeshInstance3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5990387, -0.8133446, 0)
+mesh = SubResource("CapsuleMesh_6krj3")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.3520036)
